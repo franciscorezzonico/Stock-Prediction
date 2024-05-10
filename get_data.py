@@ -17,8 +17,6 @@ end = today - timedelta(days=1)
 # Download AAPL daily data from Yahoo Finance.
 AAPL_data = yf.download('AAPL', start, end, interval='1d')
 
-# Keep all columns except 'Close'.
-AAPL_data = AAPL_data.loc[:, AAPL_data.columns != 'Close']
-
 # Export the dataframe as a '.csv' file.
-AAPL_data.to_csv('AAPL_daily_data.csv', sep=',', index=True)
+path = 'C:/Users/franc/OneDrive/Escritorio/Stock Prediction/AAPL_daily_data.csv'
+AAPL_data.to_csv(path, sep=',', index=True)
